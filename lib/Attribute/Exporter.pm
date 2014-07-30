@@ -12,7 +12,7 @@ my %export_ok;
 my $export_tags;
 
 our $Verbose ||= 0;
-our $VERSION = '1.00';
+our $VERSION = '0.02';
 our $use_indirection ||= 0;
 
 sub export_constant {
@@ -208,7 +208,7 @@ sub _MODIFY_ATTRIBUTES {
 	my $export_ok_attr = delete($attrs{export_ok});
 	my @export_tag_attrs;
 	for my $attr (keys(%attrs)) {
-		if (my ($tag) = $attr =~ m/^export_tag\(([^)])\)$/) {
+		if (my ($tag) = $attr =~ m/^export_tag\(([^)]+)\)$/) {
 			if ($tag eq 'DEFAULT' || $tag eq 'OK') {
 				carp "using $tag as an export tag clobbers internal $tag";
 			}
@@ -396,7 +396,7 @@ data types although support for ARRAY and HASH is straighforward to add.
 
 =head1 AUTHOR
 
-Andrew Wansink E<lt>ajwans@opera.comE<gt>
+Andrew Wansink E<lt>andy@halogix.comE<gt>
 
 =head1 COPYRIGHT AND LICENSE
 

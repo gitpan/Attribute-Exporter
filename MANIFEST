@@ -5,3 +5,5 @@ README
 t/Attribute-Exporter.t
 t/t.pm
 lib/Attribute/Exporter.pm
+META.yml                                 Module YAML meta-data (added by MakeMaker)
+META.json                                Module JSON meta-data (added by MakeMaker)
